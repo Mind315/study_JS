@@ -3,4 +3,5 @@ h1 {
    font-size: 26px;
    font-weight: 700;
    color: darkred;
+   border: 2px solid black;
 }

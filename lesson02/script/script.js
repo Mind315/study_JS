@@ -1,21 +1,16 @@
  // 1. Присвоить значения.
-const money = 21000;
-const income = 'Донорство';
-const addExpenses = 'ЖКЧ, алкоголь, Ипотека';
-const deposit = true;
-const mission = 1000000;
-const period = 7;
+const money = 21000,
+      income = 'Донорство',
+      addExpenses = 'ЖКЧ, алкоголь, Ипотека',
+      deposit = true,
+      mission = 1000000,
+      period = 7,
+      budgetDay = money / 30;
 // 2. методы и свойтва
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-
+console.log(typeof money, typeof income, typeof deposit);
 console.log(addExpenses.length);
-
 console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission + ' рублей');
-
 console.log(addExpenses.toLowerCase().split(', '));
 
-const budgetDay = money / 30;
-console.log(budgetDay);
+console.log( budgetDay);

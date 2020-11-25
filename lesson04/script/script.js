@@ -15,18 +15,18 @@ let   money = +prompt('Ваш месячный доход?'),
  const showTypeOf = function(data) {
    console.log(data, typeof(data));
  };
-const getExpensesMonth = function(){
+ const getExpensesMonth = function(){
    return amount1 + amount2;
-};
-const getAccumulatedMonth = function(){
+ };
+ const getAccumulatedMonth = function(){
   return money - (amount1 + amount2);
-};
-const    accumulatedMonth = getAccumulatedMonth();
+ };
+ const    accumulatedMonth = getAccumulatedMonth();
 
-const getTargetMonth = function(){
+ const getTargetMonth = function(){
   return mission / accumulatedMonth;
-};
-const    resultGetExpensesMonth = getExpensesMonth(),    
+ };
+ const    resultGetExpensesMonth = getExpensesMonth(),    
          budgetDay = accumulatedMonth / 30,  
          missionTarget = ( mission / accumulatedMonth);
 
@@ -40,16 +40,14 @@ console.log(addExpenses.toLowerCase().split(', '));
 console.log('Бюджет на месяц ' + accumulatedMonth);
 console.log('цель будет достигнута за: ' + (Math.ceil(getTargetMonth())) + ' месяцев');
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
-
-const getStatusInCome = function(){
+ const getStatusInCome = function(){
    if (budgetDay >= 1200){
       return('У вас высокий уровень дохода');
    }  else if (budgetDay >= 600 && budgetDay < 1200) {
       return('У вас средний уровень дохода');
    }  else if (budgetDay >= 0 && budgetDay < 600) {
       return('К сожалению у вас уровень дохода ниже среднего');
-   }  else  {    console.log('Что то пошло не так'); }
-   
+   }  else  {    console.log('Что то пошло не так'); }  
 };
 console.log(getStatusInCome());
 

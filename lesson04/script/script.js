@@ -15,15 +15,15 @@ let   money = +prompt('Ваш месячный доход?'),
  const showTypeOf = function(data) {
    console.log(data, typeof(data));
  };
-let getExpensesMonth = function(){
+const getExpensesMonth = function(){
    return amount1 + amount2;
 };
-let getAccumulatedMonth = function(){
+const getAccumulatedMonth = function(){
   return money - (amount1 + amount2);
 };
 const    accumulatedMonth = getAccumulatedMonth();
 
-let getTargetMonth = function(){
+const getTargetMonth = function(){
   return mission / accumulatedMonth;
 };
 const    resultGetExpensesMonth = getExpensesMonth(),    

@@ -1,4 +1,4 @@
- 'use strict'
+ 'use strict';
 
 let   money = +prompt('Ваш месячный доход?'),
       income = 'Донорство',
@@ -10,16 +10,26 @@ let   money = +prompt('Ваш месячный доход?'),
       amount2 = +prompt('Во сколько это обойдется?', ['4000']),
       mission = 1000000,
       period = 7;     
- let  resultGetExpensesMonth = getExpensesMonth();    
- let  accumulatedMonth = getAccumulatedMonth();
- let  getTargetMonth = mission / accumulatedMonth, 
-      budgetDay = accumulatedMonth / 30,  
-      missionTarget = ( mission / accumulatedMonth);
-     
 
- let showTypeOf = function(data) {
+ 
+ const showTypeOf = function(data) {
    console.log(data, typeof(data));
  };
+let getExpensesMonth = function(){
+   return amount1 + amount2;
+};
+let getAccumulatedMonth = function(){
+  return money - (amount1 + amount2);
+};
+const    accumulatedMonth = getAccumulatedMonth();
+
+let getTargetMonth = function(){
+  return mission / accumulatedMonth;
+};
+const    resultGetExpensesMonth = getExpensesMonth(),    
+         budgetDay = accumulatedMonth / 30,  
+         missionTarget = ( mission / accumulatedMonth);
+
 
  showTypeOf(money);
  showTypeOf(income);
@@ -28,10 +38,10 @@ let   money = +prompt('Ваш месячный доход?'),
 console.log(resultGetExpensesMonth);
 console.log(addExpenses.toLowerCase().split(', '));
 console.log('Бюджет на месяц ' + accumulatedMonth);
-console.log('цель будет достигнута за: ' + (Math.ceil(getTargetMonth)) + ' месяцев');
+console.log('цель будет достигнута за: ' + (Math.ceil(getTargetMonth())) + ' месяцев');
 console.log('Бюджет на день: ' + Math.floor(budgetDay));
 
-let getStatusInCome = function(){
+const getStatusInCome = function(){
    if (budgetDay >= 1200){
       return('У вас высокий уровень дохода');
    }  else if (budgetDay >= 600 && budgetDay < 1200) {
@@ -45,10 +55,4 @@ console.log(getStatusInCome());
 
 
 
-function getExpensesMonth (){
-    return amount1 + amount2;
-}
-function getAccumulatedMonth (){
-   return money - (amount1 + amount2);
-}
 

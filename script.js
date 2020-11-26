@@ -60,13 +60,17 @@ const budgetDay = accumulatedMonth / 30,
   missionTarget = mission / accumulatedMonth;
 
 
-  const getTargetMonth = function () {
-   if (mission / accumulatedMonth > 0) {
-     return (mission / accumulatedMonth);
-   } else {
-     return;
-   }
+  const getTargetMonth = function () {  
+      return (mission / accumulatedMonth);
  };
+ if (getTargetMonth() > 0) {
+  console.log(
+    "цель будет достигнута за: " + Math.ceil(getTargetMonth()) + " месяцев"
+  );
+} else {
+  console.log("Не будет достигнута");
+}
+
 showTypeOf(money);
 showTypeOf(income);
 showTypeOf(deposit);
@@ -77,13 +81,6 @@ console.log("Бюджет на месяц " + accumulatedMonth);
 console.log("Расходы замесяц: " + expensesAmount);
 console.log("Бюджет на день: " + Math.floor(budgetDay));
 
-if (mission / accumulatedMonth > 0) {
-  console.log(
-    "цель будет достигнута за: " + Math.ceil(getTargetMonth()) + " месяцев"
-  );
-} else {
-  console.log("не будет достигнута");
-}
 
 
 
